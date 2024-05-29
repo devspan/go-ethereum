@@ -2,7 +2,6 @@ package zkp
 
 import (
     "log"
-    "math/big"
     "os"
 
     "github.com/consensys/gnark/backend/groth16"
@@ -14,7 +13,8 @@ func CompileCircuit() {
     var circuit TransactionCircuit
 
     // Compile the circuit
-    r1cs, err := frontend.Compile(fr.Modulus(), &circuit, frontend.WithBuilder(frontend.NewBuilder))
+    builder := frontend.NewBuilder()
+    r1cs, err := frontend.Compile(fr.Modulus(), builder, &circuit)
     if err != nil {
         log.Fatal(err)
     }

@@ -27,10 +27,6 @@ func VerifyProof(proofBytes []byte) (bool, error) {
 
     // Verify the proof
     publicWitness := make([]frontend.Variable, 0) // Public inputs (if any)
-    valid, err := groth16.Verify(proof, vk, publicWitness)
-    if err != nil {
-        return false, err
-    }
-
+    valid := groth16.Verify(proof, vk, publicWitness)
     return valid, nil
 }

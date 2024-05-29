@@ -29,7 +29,8 @@ func GenerateProof(senderBalance, receiverBalance, amount, newSenderBalance, new
     }
 
     // Compile the circuit
-    r1cs, err := frontend.Compile(fr.Modulus(), witness, frontend.WithBuilder(frontend.NewBuilder))
+    builder := frontend.NewBuilder()
+    r1cs, err := frontend.Compile(fr.Modulus(), builder, witness)
     if err != nil {
         return nil, err
     }

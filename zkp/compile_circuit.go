@@ -1,19 +1,20 @@
-package main
+package zkp
 
 import (
     "log"
+    "math/big"
     "os"
-    "github.com/consensys/gnark/frontend"
+
     "github.com/consensys/gnark/backend/groth16"
-    "github.com/consensys/gnark-crypto/ecc/bls12-381"
-    "github.com/devspan/zketh/zkp"
+    "github.com/consensys/gnark/frontend"
+    "github.com/consensys/gnark-crypto/ecc/bls12-381/fr"
 )
 
-func main() {
-    var circuit zkp.TransactionCircuit
+func CompileCircuit() {
+    var circuit TransactionCircuit
 
     // Compile the circuit
-    r1cs, err := frontend.Compile(bls12381.New(), frontend.Groth16, &circuit)
+    r1cs, err := frontend.Compile(fr.Modulus(), &circuit, frontend.WithBuilder(frontend.NewBuilder))
     if err != nil {
         log.Fatal(err)
     }
@@ -30,7 +31,7 @@ func main() {
         log.Fatal(err)
     }
     defer pkFile.Close()
-    err = groth16.WriteProvingKey(pkFile, pk)
+    _, err = pk.WriteTo(pkFile)
     if err != nil {
         log.Fatal(err)
     }
@@ -41,7 +42,7 @@ func main() {
         log.Fatal(err)
     }
     defer vkFile.Close()
-    err = groth16.WriteVerifyingKey(vkFile, vk)
+    _, err = vk.WriteTo(vkFile)
     if err != nil {
         log.Fatal(err)
     }

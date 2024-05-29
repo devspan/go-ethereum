@@ -1,10 +1,9 @@
 package zkp
 
 import (
-    "github.com/consensys/gnark/frontend"
     "github.com/consensys/gnark/backend/groth16"
+    "github.com/consensys/gnark/frontend"
     "os"
-    "log"
 )
 
 func VerifyProof(proofBytes []byte) (bool, error) {

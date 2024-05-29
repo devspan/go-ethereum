@@ -1,11 +1,10 @@
 package zkp
 
 import (
-    "github.com/consensys/gnark/frontend"
     "github.com/consensys/gnark/backend/groth16"
-    "github.com/consensys/gnark/std/algebra/sw_bls12381"
+    "github.com/consensys/gnark/frontend"
+    "github.com/consensys/gnark-crypto/ecc/bls12-381/fr"
     "os"
-    "log"
 )
 
 func GenerateProof(senderBalance, receiverBalance, amount, newSenderBalance, newReceiverBalance frontend.Variable) ([]byte, error) {
@@ -30,9 +29,9 @@ func GenerateProof(senderBalance, receiverBalance, amount, newSenderBalance, new
     }
 
     // Compile the circuit
-    r1cs, err := frontend.Compile(sw_bls12381.New(), frontend.Groth16, witness)
+    r1cs, err := frontend.Compile(fr.Modulus(), witness, frontend.WithBuilder(frontend.NewBuilder))
     if err != nil {
-        log.Fatal(err)
+        return nil, err
     }
 
     // Generate the proof

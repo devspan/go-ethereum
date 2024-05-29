@@ -6,7 +6,7 @@ import (
     "github.com/consensys/gnark/frontend"
     "github.com/consensys/gnark/backend/groth16"
     "github.com/consensys/gnark/std/algebra/sw_bls12381"
-    "github.com/yourusername/go-ethereum/zkp"
+    "github.com/devspan/zketh/zkp"
 )
 
 func main() {

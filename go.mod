@@ -67,6 +67,11 @@ require (
 	golang.org/x/time v0.0.0-20210220033141-f8bda1e9f3ba
 	golang.org/x/tools v0.6.0
 	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce
+	github.com/consensys/gnark v0.10.0
+	github.com/devspan/go-ethereum v0.0.0-20240529100140-d6fdcb33d2b1
+    github.com/devspan/zketh v0.0.0-20240529100140-d6fdcb33d2b1
+    github.com/consensys/gnark v0.10.0
+    github.com/consensys/gnark-crypto v0.12.2-0.20240215234832-d72fcb379d3e
 )
 
 require (

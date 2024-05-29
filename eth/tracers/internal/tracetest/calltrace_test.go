@@ -26,22 +26,22 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth/tracers"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/tests"
+	"github.com/devspan/go-ethereum/common"
+	"github.com/devspan/go-ethereum/common/hexutil"
+	"github.com/devspan/go-ethereum/common/math"
+	"github.com/devspan/go-ethereum/core"
+	"github.com/devspan/go-ethereum/core/rawdb"
+	"github.com/devspan/go-ethereum/core/types"
+	"github.com/devspan/go-ethereum/core/vm"
+	"github.com/devspan/go-ethereum/crypto"
+	"github.com/devspan/go-ethereum/eth/tracers"
+	"github.com/devspan/go-ethereum/params"
+	"github.com/devspan/go-ethereum/rlp"
+	"github.com/devspan/go-ethereum/tests"
 
 	// Force-load native and js pacakges, to trigger registration
-	_ "github.com/ethereum/go-ethereum/eth/tracers/js"
-	_ "github.com/ethereum/go-ethereum/eth/tracers/native"
+	_ "github.com/devspan/go-ethereum/eth/tracers/js"
+	_ "github.com/devspan/go-ethereum/eth/tracers/native"
 )
 
 // To generate a new callTracer test, copy paste the makeTest method below into

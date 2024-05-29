@@ -24,17 +24,17 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/ethereum/go-ethereum/ethstats"
-	"github.com/ethereum/go-ethereum/internal/debug"
-	"github.com/ethereum/go-ethereum/les"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/nat"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/devspan/go-ethereum/core"
+	"github.com/devspan/go-ethereum/eth/downloader"
+	"github.com/devspan/go-ethereum/eth/ethconfig"
+	"github.com/devspan/go-ethereum/ethclient"
+	"github.com/devspan/go-ethereum/ethstats"
+	"github.com/devspan/go-ethereum/internal/debug"
+	"github.com/devspan/go-ethereum/les"
+	"github.com/devspan/go-ethereum/node"
+	"github.com/devspan/go-ethereum/p2p"
+	"github.com/devspan/go-ethereum/p2p/nat"
+	"github.com/devspan/go-ethereum/params"
 )
 
 // NodeConfig represents the collection of configuration values to fine tune the Geth

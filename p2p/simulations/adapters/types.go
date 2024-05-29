@@ -25,14 +25,14 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/devspan/go-ethereum/crypto"
+	"github.com/devspan/go-ethereum/log"
+	"github.com/devspan/go-ethereum/node"
+	"github.com/devspan/go-ethereum/p2p"
+	"github.com/devspan/go-ethereum/p2p/enode"
+	"github.com/devspan/go-ethereum/p2p/enr"
+	"github.com/devspan/go-ethereum/rpc"
 	"github.com/docker/docker/pkg/reexec"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/enr"
-	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/gorilla/websocket"
 )
 
@@ -42,7 +42,6 @@ import (
 // * SimNode    - An in-memory node
 // * ExecNode   - A child process node
 // * DockerNode - A Docker container node
-//
 type Node interface {
 	// Addr returns the node's address (e.g. an Enode URL)
 	Addr() []byte

@@ -20,9 +20,9 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb/memorydb"
+	"github.com/devspan/go-ethereum/common"
+	"github.com/devspan/go-ethereum/crypto"
+	"github.com/devspan/go-ethereum/ethdb/memorydb"
 )
 
 // makeTestTrie create a sample test trie to test node-wise reconstruction.

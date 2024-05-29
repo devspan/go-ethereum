@@ -19,9 +19,9 @@ package downloader
 import (
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth/protocols/eth"
+	"github.com/devspan/go-ethereum/common"
+	"github.com/devspan/go-ethereum/core/types"
+	"github.com/devspan/go-ethereum/eth/protocols/eth"
 )
 
 // fetchHeadersByHash is a blocking version of Peer.RequestHeadersByHash which

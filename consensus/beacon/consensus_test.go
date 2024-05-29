@@ -5,10 +5,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/devspan/go-ethereum/common"
+	"github.com/devspan/go-ethereum/consensus"
+	"github.com/devspan/go-ethereum/core/types"
+	"github.com/devspan/go-ethereum/params"
 )
 
 type mockChain struct {

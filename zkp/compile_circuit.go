@@ -5,7 +5,7 @@ import (
     "os"
     "github.com/consensys/gnark/frontend"
     "github.com/consensys/gnark/backend/groth16"
-    "github.com/consensys/gnark/std/algebra/sw_bls12381"
+    "github.com/consensys/gnark-crypto/ecc/bls12-381"
     "github.com/devspan/zketh/zkp"
 )
 
@@ -13,7 +13,7 @@ func main() {
     var circuit zkp.TransactionCircuit
 
     // Compile the circuit
-    r1cs, err := frontend.Compile(sw_bls12381.New(), frontend.Groth16, &circuit)
+    r1cs, err := frontend.Compile(bls12381.New(), frontend.Groth16, &circuit)
     if err != nil {
         log.Fatal(err)
     }

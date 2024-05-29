@@ -2,7 +2,7 @@ package zkp
 
 import (
     "github.com/consensys/gnark/frontend"
-    "github.com/consensys/gnark/std/algebra/sw_bls12381"
+    "github.com/consensys/gnark-crypto/ecc/bls12-381"
 )
 
 type TransactionCircuit struct {

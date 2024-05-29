@@ -1,9 +1,11 @@
 package zkp
 
 import (
+    "os"
+
     "github.com/consensys/gnark/backend/groth16"
     "github.com/consensys/gnark/frontend"
-    "os"
+    "github.com/consensys/gnark-crypto/ecc/bn254"
 )
 
 func VerifyProof(proofBytes []byte) (bool, error) {
@@ -27,6 +29,10 @@ func VerifyProof(proofBytes []byte) (bool, error) {
 
     // Verify the proof
     publicWitness := make([]frontend.Variable, 0) // Public inputs (if any)
-    valid := groth16.Verify(proof, vk, publicWitness)
-    return valid, nil
+    err = groth16.Verify(proof, vk, publicWitness)
+    if err != nil {
+        return false, err
+    }
+
+    return true, nil
 }
